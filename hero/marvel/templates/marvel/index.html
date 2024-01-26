@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav-Bar</title>
+    <link rel="stylesheet" href="{% static 'css/marvel.css' %}">
+</head>
+<body>
+    <h1 class="heading"> Hello World </h1>
+    {% if 'name'=='manis' %}
+    <h2> i am {{name}}</h2>
+    {% endif %}
+    <img src="{% static 'image/marvel.jpg'%}" height='250px' width='250px' alt='marvel'>
+    <button>click me</button>
+</body>
+</html>

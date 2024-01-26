@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'dc/css/bootstrap.min.css' %}">
+    <title>{% block title %}batman{% endblock title %}</title>
+</head>
+<body>
+    {% block content %}
+    <h1> i am a batman </h1>
+    {% endblock content %}
+
+    {% comment %} <h2> {{dcs}} </h2> {% endcomment %}
+
+    <table border=5 cellpadding=3>
+        <tr>
+        <th>name</th>
+        <th>heroic_name</th>
+        <th>city</th>
+        </tr>
+        {% for d in dcs  %}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.heroic_name}}</td>
+            <td>{{d.city}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <script src="{% static 'dc/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'dc/js/jquery.min.js' %}"></script>
+    <script src="{% static 'dc/js/popper.min.js' %}"></script>
+</body>
+</html>
