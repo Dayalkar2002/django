@@ -1,6 +1,11 @@
 from django import forms
+from.models import Dc
 
-class Ddc(forms.Form):
-    GENDER_CHOICES = [('M', 'Male'), ('F', 'Female')]
-    name=forms.CharField(label='Full Name',choices=GENDER_CHOICES)
-    sir_name=forms.CharField(disabled=True)
+class Ddc(forms.ModelForm):
+    class Meta:
+        model =Dc
+
+        fields=['name','heroic_name']
+
+        labels={'name':'Enter first name'}
+    

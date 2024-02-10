@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <title>{% block title %}batman{% endblock title %}</title>
+</head>
+<body>
+    <h2 class='crud'> CRUD OPERATIONS </h2>
+    <div class="form">
+        <h2>life बना दुंगा </h2>
+        <form action="" method="POST" novalidate>
+            {% csrf_token %}
+            <div class="input">
+                {{cd.as_p}}
+                <input type="submit" class="submit">
+            </div>
+            <div class="table">
+                <table class="">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">name</th>
+                        <th scope="col">Heroic_Name</th>
+                        <th scope="col">update & delete</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for i in cm %}
+                      <tr>
+                        <th scope="row">{{i.id}}</th>
+                        <td>{{i.name}}</td>
+                        <td>{{i.heroic_name}}</td>
+                        <td>
+                          <a href="" class="btn btn-secondary">Update</a>
+                          <form action="{% url 'delete' i.id %}" method="POST" class="d-inline">
+                            {% csrf_token %}
+                            <input type="submit" class="btn btn-secondary" value="Delete">
+                          </form>
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                </table>
+            </div>      
+        </form>
+    </div>
+
+
+
+
+    <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'core/js/jquery.min.js' %}"></script>
+    <script src="{% static 'core/js/popper.min.js' %}"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@ from dc.models import Dc
 
 @admin.register(Dc)
 class DcAdmin(admin.ModelAdmin):
-    list_display =['id','name','heroic_name','city']
+    list_display =['id','name','heroic_name']
 
 
 
