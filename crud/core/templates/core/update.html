@@ -1,0 +1,6 @@
+<form action="" method="POST" novalidate>
+    {% csrf_token %}
+    <div class="input">
+        {{mf.as_p}}
+        <input type="submit" class="submit">
+    </div>

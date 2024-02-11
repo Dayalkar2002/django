@@ -28,3 +28,16 @@ def delete(request,id):
         mm.delete()
     return redirect('/core/')
         
+
+def update(request,id):
+    if request.method=='POST':
+        mm=CrudModel.objects.get(pk=id)
+        mf=CrudForm(request.POST,instance=mm)
+        if mf.is_valid():
+            mf.save()        
+
+    else:
+        mm=CrudModel.objects.get(pk=id)
+        mf=CrudForm(instance=mm)
+
+    return render(request,'core/update.html',{'mf':mf})            
