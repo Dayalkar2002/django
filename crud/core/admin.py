@@ -5,3 +5,6 @@ from .models import CrudModel
 @admin.register(CrudModel)
 class CrudModelAdmin(admin.ModelAdmin):
     list_display=['id','name','heroic_name']
+
+
+# admin.site.register(CrudModel)
