@@ -8,13 +8,14 @@
     <title>Crud1</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <h1>Login Please!!! </h1>
+    <form action="" method="POST" novalidate>
         {% csrf_token %}
-        {% for s in ss  %}
-        {{s.label}}{{s}} <br><br>
+        {% for s in af  %}
+        {{s.label_tag}}{{s}} {{s.errors}} <br><br>
         
         {% endfor %}
-        <input type="submit">
-    </form>
+        <input type="Submit" value="Login">
+    </form>    
 </body>
 </html>

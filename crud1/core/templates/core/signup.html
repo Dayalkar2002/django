@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+    <title>Crud1</title>
+</head>
+<body>
+    <h1>Sign Up </h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for s in ss  %}
+        {{s.label_tag}}{{s}} {{s.errors}} <br><br>
+        
+        {% endfor %}
+        <input type="submit">
+    </form>
+</body>
+</html>
