@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from . forms import SignUp
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib.auth import authenticate,login,logout
 #from django.contrib.auth.forms import UserCreationForm
 
@@ -55,3 +55,9 @@ def log_out(request):
     logout(request)
     return redirect('/login/')
 
+def pcf(request):
+    if request.mthod=="POST":
+        ss=PasswordChangeForm(request.user)
+
+    ss=PasswordChangeForm(request.user)
+    return render(request,'core/pcf.html',{'ss':ss})
